@@ -5,7 +5,7 @@ class Home extends Component{
         return(
             <Fragment>
                 <header>
-                    <p>logo</p>
+                    <p>Insert logo here</p>
                     <nav>
                       <ul>
                         <li>item 1</li>
@@ -15,7 +15,7 @@ class Home extends Component{
                       </ul>
                     </nav>
                 </header>    
-                <main>
+                <main className="home">
                    <div className="brand-wrapper">
                        <h1>FoodFor</h1>
                        <p>Lorem ipsum dolor sit amet</p>
