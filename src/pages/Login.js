@@ -5,7 +5,7 @@ class Login extends Component{
     render(){
         return(
             <Fragment>
-                <main>
+                <main className="login-block">
                     <h1>Login</h1>
                     <form method="POST">
                         <div>
