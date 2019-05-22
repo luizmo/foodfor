@@ -14,7 +14,14 @@ class Receiver extends Component{
                     </nav>
                 </header>
                 <main className="wrapper-campaings">
-
+                    <div className="box-campanha">
+                        <div className="placeholder-img">
+                            <div className="content">
+                               <p>Lorem ipsum</p>
+                               <span>Lorem ipsum dolor sit amet</span> 
+                            </div>
+                        </div>
+                    </div>    
                 </main>
                 <footer>
 

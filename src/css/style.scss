@@ -54,6 +54,21 @@ main.login-block{ width: 100%; max-width: 1440px; padding: 0 40px; margin: 80px 
 	}
 }
 
+/*=============================RECEIVER==============================*/
+header.fix-lateral{ position: fixed; left: 0; top: 0; width: 15%; height: 100%; padding: 0 15px; 
+	nav{ display: flex; flex-direction: column; height: 100%;  
+		ul{ display: flex; flex-direction: column; margin-top: 80px;  width: 100%; height: 100%; justify-content: flex-start; align-items: flex-start; }
+	}  
+}
+main.wrapper-campaings{ margin: 50px 0 0 15%; width: 85%; min-height: 100%; padding: 0 20px;
+	.box-campanha{ background: #FFF; box-shadow: 0 10px 25px rgba(0,0,0,.1); border-radius: 10px; min-height: 200px; max-width: 270px; 
+		.placeholder-img{ position: relative; background-color: #00d663; border-radius: 10px; min-height: 200px; max-width: 270px; 
+			.content{ padding: 15px; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,.1); }
+		}
+	}  
+}
+
+footer{ margin-left: 15%; width: 85%; }
 @media screen and (min-width: 998px){
 	header nav ul li a:hover{
 		hr{ width: 100%; opacity: 1;  }
