@@ -45,7 +45,7 @@ footer{ background-color: #00d663; height: 80px; display: flex; justify-content:
 /*============================Login====================================*/
 main.login-block{ width: 100%; max-width: 1440px; padding: 80px  40px 0; margin: 0 auto; background: #4CAF50; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
 	h1{ color: #FFF; max-width: 700px; text-align: left; margin: 0 auto; width: 100%; }
-	form{ margin: 60px auto 0; max-width: 400px; width: 100%; 
+	form{ display: flex; flex-direction: column; margin: 60px auto 0; max-width: 400px; width: 100%; 
 		div{ display: flex; flex-direction: column; position: relative; 
 			input{ background: transparent; border: none; border-bottom: 1px solid #FFF; text-shadow: none; font-size: 18px; color: #FFF; user-select: none; outline: none; margin-bottom: 35px; transition: all 0.2s ease;
 				&::placeholder{ opacity: 0; }
@@ -54,8 +54,14 @@ main.login-block{ width: 100%; max-width: 1440px; padding: 80px  40px 0; margin:
         			~label{ transform: translate(-5px, -18px) scale(0.8);   }
     			}
 			}
-			label{  font-size: 18px; position: absolute; color: #FFF; transition: transform .3s ease, opacity 0s ease 0s; }
+			label{ pointer-events: none; font-size: 18px; position: absolute; color: #FFF; transition: transform .3s ease, opacity 0s ease 0s; }
 		}
+
+		button{ transition: all 0.3s ease; margin: 0 auto; background: transparent; padding: 0; border: 2px solid #FFF; color:#FFF; padding: 0 18px; height: 36px; text-align: center; border-radius: 33px; 
+			&:hover{ background: #FFF; color:#4CAF50; }
+			&::disabled{ pointer-events: none; opacity: 0.8; }
+		}
+				
 	}
 	div.new-account{ display: flex; justify-content: center; 
 		p{ text-align: center; color: #FFF;

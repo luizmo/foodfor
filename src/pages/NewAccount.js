@@ -1,13 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
 
-class Login extends Component{
+class NewAccount extends Component{
     render(){
         return(
             <Fragment>
                 <main className="login-block">
-                    <h1>Login</h1>
+                    <h1>Criar Conta</h1>
                     <form method="POST">
+                        <div>
+                            <input type="text" placeholder="Seu nome"/> 
+                            <label>Seu nome</label>
+                        </div>
                         <div>
                             <input type="text" placeholder="E-mail"/> 
                             <label>E-mail</label>
@@ -16,20 +19,12 @@ class Login extends Component{
                             <input type="password" placeholder="Sua senha"/>
                             <label>Sua senha</label>
                         </div>
-
-                        <button type="submit">Login</button>
+                        <button type="submit">Criar conta</button>
                     </form>
-                    <div className="new-account">
-                        <p>Ainda não tem conta? <br/> 
-                            <NavLink to="/new-account">
-                                Clique aqui e requistre-se
-                            </NavLink>
-                        </p>
-                    </div>
                 </main>
             </Fragment>
-        );
+        )    
     }
 }
 
-export default Login;
+export default NewAccount;
