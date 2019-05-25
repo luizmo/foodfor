@@ -14,7 +14,7 @@ class Home extends Component{
     render(){
         return(
             <Fragment>
-                <header>
+                <header className="home">
                     <p>Insert logo here</p>
                     <nav>
                       <ul>

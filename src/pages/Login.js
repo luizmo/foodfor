@@ -9,16 +9,16 @@ class Login extends Component{
                     <h1>Login</h1>
                     <form method="POST">
                         <div>
-                            <label>E-mail</label>
                             <input type="text" placeholder="E-mail"/> 
+                            <label>E-mail</label>
                         </div>
                         <div>
-                            <label>Sua senha</label>
                             <input type="password" placeholder="Sua senha"/>
+                            <label>Sua senha</label>
                         </div>
                     </form>
                     <div className="new-account">
-                        <p>Ainda não tem conta? 
+                        <p>Ainda não tem conta? <br/> 
                             <NavLink to="/new-account">
                                 Clique aqui e requistre-se
                             </NavLink>
