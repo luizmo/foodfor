@@ -1,6 +1,8 @@
+import Donation from "./Donation";
+import Giver from "./Giver";
 import Home from "./Home";
 import Login from "./Login";
-import Receiver from "./Receiver";
 import NewAccount from "./NewAccount";
-import Giver from "./Giver";
-export { Home, Login, Receiver, NewAccount, Giver }
+import Receiver from "./Receiver";
+
+export { Donation, Giver, Home, Login, NewAccount, Receiver }
