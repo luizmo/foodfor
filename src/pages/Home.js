@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link as ScrollLink, Element } from 'react-scroll';
+import { NavLink } from 'react-router-dom';
 
 
 const scrollLinkDefaultProps = {
@@ -37,7 +38,9 @@ class Home extends Component{
                             </ScrollLink>
                         </li>
                         <li>
-                            item 4
+                            <NavLink to="/login">
+                                Login
+                            </NavLink>    
                             <hr/>
                         </li>  
                       </ul>
@@ -91,7 +94,7 @@ class Home extends Component{
                         </Element>
                     </div> 
                 </main>
-                <footer>
+                <footer className="home">
                     <div className="social-wrapper">
                         <a href="">Facebook</a>
                         <a href="">Instagram</a>
