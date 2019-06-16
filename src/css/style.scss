@@ -124,6 +124,38 @@ footer.donation{
 	span{ display: block; margin: 0 auto; } 
 }
 
+/*======================Create-Donation==================*/
+header.flow-donation{ 
+	h1{  color:#f7701b; }
+}
+main.create-donation{ margin: 0 auto; padding-top: 80px;  max-width: 1200px; width: 100%;  height: 100%; min-height: 100vh;
+	form{ margin-top: 60px;
+		div{ display: flex; flex-direction: column; position: relative;  margin-bottom: 35px;
+			input{ background: transparent; border: none; border-bottom: 1px solid #f7701b; text-shadow: none; font-size: 22px; color: #000; user-select: none; outline: none; margin-bottom: 35px; transition: all 0.2s ease;
+				&::placeholder{ opacity: 0; }
+				&:-webkit-autofill{ -webkit-text-fill-color: #000!important; }
+				&:focus, &:not(:placeholder-shown){ border-bottom: 1px solid  #f7701b;
+        			~label{ transform: translate(-25px, -18px) scale(0.8);   }
+    			}
+			}
+			label{ pointer-events: none; font-size: 22px; position: absolute; color: #000; transition: transform .3s ease, opacity 0s ease 0s; }
+		}
+		div{
+			textarea{ border: 1px solid #f7701b; outline: none; min-height: 300px;  padding: 20px; font-size: 22px; color: #000; 
+				&::placeholder{ color: #000; }
+				&:focus, &:not(:placeholder-shown){  
+					&::placeholder{ opacity: 0; }
+				}
+			}
+
+			button{ font-size: 20px; transition: all 0.3s ease; margin: 0 auto; background: #f7701b; padding: 0; border: 2px solid #f7701b; color:#FFF; padding: 0 18px; height: 36px; text-align: center; border-radius: 33px; 
+				&:hover{ background: #FFF; color:#f7701b; }
+				&::disabled{ pointer-events: none; opacity: 0.8; }
+			}
+		}
+	}	
+}
+
 
 @media screen and (min-width: 998px){
 	header nav ul li a:hover{
