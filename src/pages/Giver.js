@@ -1,18 +1,11 @@
 import React, { Component, Fragment } from 'react';
+import { MenuGiver } from '../components';
 
 class Giver extends Component{
 	render(){
 		return(
 			<Fragment>
- 				<header className="fix-lateral">
-                    <nav>
-                        <ul>
-                            <li>Listar Campanhas</li>
-                            <li>Novas doações</li>
-                            <li>Acompanhar doações</li>
-                        </ul>
-                    </nav>
-                </header>
+ 				<MenuGiver/>
 				<main className="wrapper-campaings">
 					<div className="box-campanha">
                         <div className="placeholder-img">

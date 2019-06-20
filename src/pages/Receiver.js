@@ -10,6 +10,7 @@ class Receiver extends Component{
                             <li>Criar página Campanha</li>
                             <li>Gerenciar fotos</li>
                             <li>Comentários</li>
+                            <li>Sair</li>
                         </ul>
                     </nav>
                 </header>

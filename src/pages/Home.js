@@ -1,51 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { Link as ScrollLink, Element } from 'react-scroll';
-import { Link } from 'react-router-dom';
-
-
-const scrollLinkDefaultProps = {
-  spy: true,
-  smooth: true,
-  duration: 400,
-  offset: -100
-
-};
-
+import { Element } from 'react-scroll';
+import { MenuHome } from '../components';
 class Home extends Component{
     render(){
         return(
             <Fragment>
-                <header className="home">
-                    <p>Insert logo here</p>
-                    <nav>
-                      <ul>
-                        <li>
-                            <ScrollLink to="projeto" {...scrollLinkDefaultProps} title=" O Projeto">
-                                O Projeto
-                                <hr/>
-                            </ScrollLink>  
-                        </li>
-                        <li>
-                            <ScrollLink to="como" {...scrollLinkDefaultProps} title=" Como Ajudar">
-                                Como Ajudar
-                                <hr/>
-                            </ScrollLink>  
-                        </li>
-                        <li>
-                            <ScrollLink to="quem" {...scrollLinkDefaultProps} title=" Quem Somos">
-                                Quem Somos
-                                <hr/>
-                            </ScrollLink>
-                        </li>
-                        <li>
-                            <Link to="/login">
-                                Login
-                            </Link>    
-                            <hr/>
-                        </li>  
-                      </ul>
-                    </nav>
-                </header>    
+                <MenuHome/>
                 <main className="home">
                    <div className="brand-wrapper">
                        <h1>foodfor</h1>

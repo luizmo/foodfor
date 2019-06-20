@@ -19,6 +19,10 @@ class NewAccount extends Component{
                             <input type="password" placeholder="Sua senha"/>
                             <label>Sua senha</label>
                         </div>
+                        <div>
+                            <input type="text" placeholder="Endereço"/>
+                            <label>Endereço</label>
+                        </div>
                         <button type="submit">Criar conta</button>
                     </form>
                 </main>
