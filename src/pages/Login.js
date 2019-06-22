@@ -1,19 +1,53 @@
 import React, { Component, Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,withRouter } from 'react-router-dom';
+import api from "../lib/api";
+import { login } from "../lib/auth";
 
 class Login extends Component{
+    constructor(props){
+        super(props);
+        this.state = { email: '', password: '', error: false };
+        this.handleSubmit = this.handleSubmit.bind(this);    
+    }
+
+    
+    handleSubmit(e){
+        e.preventDefault();
+        const { email, password } = this.state;
+        const { history } = this.props;
+  
+      try {
+        const response = api.post("/login", { email, password });
+        login(response.data.token);
+        if(response.data.type == 'doador'){
+            history.push("/receiver");
+        }
+        else{
+            history.push("/giver");
+        }
+      } 
+      catch (err) {
+        this.setState({
+          error:
+            "Houve um problema com o login, verifique suas credenciais. T.T"
+        });
+      }
+    }   
+
     render(){
+        const { error } = this.state;
+        console.log(error);
         return(
             <Fragment>
                 <main className="login-block">
                     <h1>Login</h1>
-                    <form method="POST">
+                    <form onSubmit={this.handleSubmit}>
                         <div>
-                            <input type="text" placeholder="E-mail"/> 
+                            <input type="text" placeholder="E-mail" onChange={e => this.setState({ email: e.target.value })}/> 
                             <label>E-mail</label>
                         </div>
                         <div>
-                            <input type="password" placeholder="Sua senha"/>
+                            <input type="password" placeholder="Sua senha" onChange={e => this.setState({ password: e.target.value })}/>
                             <label>Sua senha</label>
                         </div>
 
@@ -32,4 +66,5 @@ class Login extends Component{
     }
 }
 
-export default Login;
+export default withRouter(Login);
+
