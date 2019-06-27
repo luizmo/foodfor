@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-class MenuGiver extends Component{
+import React, { Component, Fragment } from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
+
+class MenuReceiver extends Component{
 	constructor(props){
 		super(props);
 		this.state = { isMenuOpen: false }
@@ -29,17 +30,16 @@ class MenuGiver extends Component{
 		const { isMenuOpen } = this.state;
 		return(
 			<header className="fix-lateral">
-	            <nav className={isMenuOpen ? 'active' : undefined }>
+	            <nav>
 	                <ul>
-	                    <li>Listar Campanhas</li>
-	                    <li>Novas doações</li>
-	                    <li>Acompanhar doações</li>
-	                    <li onClick={ this.logout }> Sair</li>
+	                    <li><NavLink to="/create-donation">Criar página Campanha</NavLink></li>
+	                    <li onClick={ (e) => this.logout(e) }> Sair</li>
 	                </ul>
 	            </nav>
 	        </header>
+
 		)
 	}
 }
 
-export default withRouter(MenuGiver);
+export default withRouter(MenuReceiver)

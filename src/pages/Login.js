@@ -6,42 +6,35 @@ import { login } from "../lib/auth";
 class Login extends Component{
     constructor(props){
         super(props);
-        this.state = { email: '', password: '', error: false };
-        this.handleSubmit = this.handleSubmit.bind(this);    
+        this.state = {email: undefined, password: undefined, error: false }
     }
 
-    
-    handleSubmit(e){
+    handleSignIn = async e => {
         e.preventDefault();
         const { email, password } = this.state;
         const { history } = this.props;
-  
-      try {
-        const response = api.post("/login", { email, password });
-        login(response.data.token);
-        if(response.data.type == 'doador'){
-            history.push("/receiver");
+        try {
+            const response = await api.post("/login", { email, password });
+            login(response.data.token);
+            if(response.data.type == 'doador'){
+                history.push("/receiver");
+            }
+            else{
+                history.push("/giver");
+            }
         }
-        else{
-            history.push("/giver");
+        catch (err) {
+            this.setState({error: true }); 
         }
-      } 
-      catch (err) {
-        this.setState({
-          error:
-            "Houve um problema com o login, verifique suas credenciais. T.T"
-        });
-      }
-    }   
+    };
 
     render(){
         const { error } = this.state;
-        console.log(error);
         return(
             <Fragment>
                 <main className="login-block">
                     <h1>Login</h1>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSignIn}>
                         <div>
                             <input type="text" placeholder="E-mail" onChange={e => this.setState({ email: e.target.value })}/> 
                             <label>E-mail</label>
@@ -67,4 +60,3 @@ class Login extends Component{
 }
 
 export default withRouter(Login);
-

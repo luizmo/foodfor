@@ -1,3 +1,5 @@
 import MenuHome from "./MenuHome";
 import MenuGiver from "./MenuGiver";
-export { MenuHome, MenuGiver }
+import MenuReceiver from "./MenuReceiver";
+
+export { MenuHome, MenuGiver, MenuReceiver }

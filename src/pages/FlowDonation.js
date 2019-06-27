@@ -1,7 +1,27 @@
 import React, { Component, Fragment } from 'react';
-
-
+import api from '../lib/api';
+import { withRouter } from 'react-router-dom';
 class FlowDonation extends Component{
+	state = {file: ' ', title: ' ', description:' '}
+    
+    handleSignIn = async e => {
+        e.preventDefault();
+	
+		const data = new FormData();
+		data.append('file',this.state.file);
+		data.append('title',this.state.title);
+		data.append('description',this.state.description);
+         try {
+			await api.post("/post", data);
+			this.props.history.push("/receiver");
+            
+         } catch (err) {
+           console.log(err);
+            this.setState({ error: "Ocorreu um erro ao registrar sua conta. T.T" });
+         }
+	}
+
+	
 	render(){
 		return(
 			<Fragment>
@@ -9,9 +29,13 @@ class FlowDonation extends Component{
 					<h1>Criando uma Campanha de Doação</h1>
 				</header>
 				<main className="create-donation">
-					<form method="POST">
+					<form onSubmit={this.handleSignIn}>
+					     <div>
+						    <label>IMAGEM</label> <br/>
+							<input type="file" onChange={e =>this.setState({file: e.target.files[0]})}/>
+						</div>
 						<div>
-							<input type="text" placeholder="Nome da Campanha de Doação"/>
+							<input type="text" placeholder="Nome da Campanha de Doação"onChange={e => this.setState({ title: e.target.value })}/>
 							<label>Nome da Campanha de Doação</label>
 						</div>
 						<div>
@@ -19,7 +43,7 @@ class FlowDonation extends Component{
 							<label>Informe uma pequena descrição</label>
 						</div>
 						<div>
-							<textarea placeholder="Este espaço está reservado para que apresente a instituição ou causa para qual deseja apoio"/>
+							<textarea placeholder="Este espaço está reservado para que apresente a instituição ou causa para qual deseja apoio" onChange={e => this.setState({ description : e.target.value })}/>
 						</div>
 						<div>
 							
@@ -37,4 +61,4 @@ class FlowDonation extends Component{
 	}
 }
 
-export default FlowDonation;
+export default withRouter(FlowDonation);

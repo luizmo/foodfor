@@ -33,9 +33,16 @@ class MenuHome extends Component{
 		const { isMenuOpen } = this.state;
 		return(
 			<header className="home">
-                <p>Insert logo here</p>
+				<button className="mobile" onClick={this.openMenu}>
+					<img src={ require('../img/menu.png') } alt=""/>
+				</button>
+              	<img src={require('../img/logo.png')} alt=""/>
                 <nav className={ isMenuOpen ? 'active' : undefined }>
+	                
                   <ul>
+                  	<button className="mobile" onClick={this.closeMenu}>
+						<img src={ require('../img/close.png') } alt=""/>
+					</button>
                     <li>
                         <ScrollLink to="projeto" {...scrollLinkDefaultProps} title=" O Projeto" onClick={this.closeMenu}>
                             O Projeto

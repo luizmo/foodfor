@@ -1,18 +1,26 @@
 import React, { Component } from 'react'
-import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import {  BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { Donation, FlowDonation, Giver, Home, Login, NewAccount, Receiver } from './pages'
+import {isAuthenticated} from './lib/auth';
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={ props => (
+    isAuthenticated() ? (<Component {...props}/> ) : (<Redirect to={{ pathname:'/', state:{ from:props.location }}}/> )
+  )}/>
+)
+
 class App extends Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/create-donation" component={ FlowDonation }/>
-          <Route path="/donation" component={ Donation }/>
-          <Route path="/new-account" component={ NewAccount }/>
-          <Route path="/giver" component={ Giver }/>
-          <Route path="/receiver" component={ Receiver }/>
-          <Route path="/login" component={ Login }/>
-          <Route expath="/" component={ Home }/>
+            <PrivateRoute exact path="/create-donation" component={ FlowDonation }/>
+            <Route exact path="/donation" component={ Donation }/>
+            <Route exact path="/new-account" component={ NewAccount }/>
+            <PrivateRoute exact path="/giver" component={ Giver }/>
+            <PrivateRoute exact path="/receiver" component={ Receiver }/>
+            <Route exact path="/login" component={ Login }/>
+            <Route exact expath="/" component={ Home }/>
         </Switch>
       </Router>
     );
