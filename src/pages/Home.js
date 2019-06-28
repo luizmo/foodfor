@@ -18,12 +18,9 @@ class Home extends Component{
                         <Element name="projeto">
                             <img src={require('../img/projeto.png')} alt=""/>
                             <div className="text-wrapper">
-                                <h2> O Projeto </h2>
+                                <h2> Objetivo </h2>
                                 <p>
-                                    Bacon ipsum dolor amet sirloin t-bone tri-tip porchetta prosciutto.
-                                    Meatball bacon ball tip brisket alcatra. Drumstick chuck buffalo venison.
-                                    Ham hock spare ribs buffalo beef ribs pig, doner shank bacon ball tip bresaola
-                                    cow beef pork belly shoulder.
+                                    Foodfor tem o objetivo de ligar doadores e instituições que necessitam de doações, aumentar a visibilidade e mostrar a importância dessas instituições na sociedade fazendo com que o número de doações cresça cada vez mais . O maior intuito do Foodfor é manter o processo de doação o mais transparente possível, para que isso aconteça os doadores poderão interagir com as instituições que receberão os alimentos durante todo o processo da doação.
                                 </p>
                             </div>    
                         </Element>
@@ -32,12 +29,7 @@ class Home extends Component{
                             <div className="text-wrapper">
                                 <h2> Como Ajudar </h2>
                                 <p>
-                                    Spicy jalapeno bacon ipsum dolor amet pork belly prosciutto brisket
-                                    pork loin t-bone, meatball buffalo pork chop short ribs bacon burgdoggen
-                                    alcatra. Corned beef shoulder chuck beef ribs boudin tongue tenderloin salami
-                                    venison tri-tip kielbasa. Pork tenderloin ground round shoulder cupim, venison
-                                    ham hock hamburger pork chop strip steak andouille bacon sausage alcatra landjaeger.
-                                    Ham rump pork belly pancetta, ground round salami sausage pork chop chicken venison.
+                                   Para se tornar um doador é muito simples. Primeiro faça seu cadastro como um doador no nosso site, em seguida é só escolher uma instituição que deseja apoiar e efetuar a doação.
                                 </p>
                             </div>    
                         </Element>
@@ -46,12 +38,7 @@ class Home extends Component{
                             <div className="text-wrapper">
                                 <h2> Quem Somos </h2>
                                 <p>
-                                    Bacon ipsum dolor amet sirloin t-bone tri-tip porchetta prosciutto.
-                                    Meatball bacon ball tip brisket alcatra. Drumstick chuck buffalo venison.
-                                    Spicy jalapeno bacon ipsum dolor amet pork belly prosciutto brisket
-                                    pork loin t-bone, meatball buffalo pork chop short ribs bacon burgdoggen
-                                    alcatra. Corned beef shoulder chuck beef ribs boudin tongue tenderloin salami
-                                    venison tri-tip kielbasa.
+                                    Foodfor é um mediador que tem o objetivo de ajudar pessoas que fazem a diferença na sociedade. Por meio de sua doação centenas de pessoas terão a chance de ter uma alimentação saudável e várias instituições poderão continuar fazendo seu trabalho em prol de quem precisa.
                                 </p>
                             </div>    
                         </Element>

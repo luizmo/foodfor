@@ -1,5 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import Slider from 'react-slick';
+import { withRouter, Link } from 'react-router-dom';
+import  api  from '../lib/api';
 
 const defaultPlayersOptions = {
   infinite: true,
@@ -19,54 +21,44 @@ const defaultPlayersOptions = {
 }
 
 class Donation extends Component{
+	constructor(props){
+        super(props);
+        this.state = { campaings: null }
+    }
+    async componentDidMount(){
+        const response = await api.get('post');
+        this.setState({campaings: response.data});
+    }
 	render(){
+		const { history, match: { params: { slug }  } } = this.props;
+		const { campaings } = this.state;
+		if(campaings){
+			var campaing = campaings.find(campaing => campaing._id == slug)
+		}
 		return(
 			<Fragment>
 				<main className="donation">
-					<div className="hiper-banner">
-						<img src={require('../img/donation.jpg')} alt=""/>
-						<div>
-							<h1>Doe Alimentos</h1>
-						</div>
-					</div>
-					<div className="content-donation">
-						<p> Bacon ipsum dolor amet sirloin t-bone tri-tip porchetta prosciutto.
-                        Meatball bacon ball tip brisket alcatra. Drumstick chuck buffalo venison.
-                        Ham hock spare ribs buffalo beef ribs pig, doner shank bacon ball tip bresaola
-                        cow beef pork belly shoulder.</p>
-                        <p> Bacon ipsum dolor amet sirloin t-bone tri-tip porchetta prosciutto.
-                        Meatball bacon ball tip brisket alcatra. Drumstick chuck buffalo venison.
-                        Ham hock spare ribs buffalo beef ribs pig, doner shank bacon ball tip bresaola
-                        cow beef pork belly shoulder.</p>
-                        <p> Bacon ipsum dolor amet sirloin t-bone tri-tip porchetta prosciutto.
-                        Meatball bacon ball tip brisket alcatra. Drumstick chuck buffalo venison.
-                        Ham hock spare ribs buffalo beef ribs pig, doner shank bacon ball tip bresaola
-                        cow beef pork belly shoulder.</p>
-                        <p> Bacon ipsum dolor amet sirloin t-bone tri-tip porchetta prosciutto.
-                        Meatball bacon ball tip brisket alcatra. Drumstick chuck buffalo venison.
-                        Ham hock spare ribs buffalo beef ribs pig, doner shank bacon ball tip bresaola
-                        cow beef pork belly shoulder.</p>
-					</div>
-					<div className="slider desktop">
-						<Slider {...defaultPlayersOptions}>
-							<div>
-								<img src={require('../img/donation.jpg')} alt=""/>
+					{campaing && (
+						<Fragment>
+							<div className="hiper-banner">
+								<img src={campaing.url} alt=""/>
+								<div>
+									<h1>{campaing.title}</h1>
+								</div>
 							</div>
-							<div>
-								<img src={require('../img/donation.jpg')} alt=""/>
-							</div>
-							<div>
-								<img src={require('../img/donation.jpg')} alt=""/>
+							<div className="content-donation">
+								<p>{campaing.description}</p>
+								<Link to="/success-donation"> Doar </Link>
 							</div>	
-						</Slider>
-					</div>	
+						</Fragment>
+					) }
 				</main>
 				<footer className="home donation">
-					<span>FoodFor</span>
+					<span>foodfor</span>
 				</footer>
 			</Fragment>
 		);
 	}
 }
 
-export default Donation;
+export default withRouter(Donation);

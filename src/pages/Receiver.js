@@ -16,13 +16,12 @@ class Receiver extends Component{
             <Fragment>
                 <MenuReceiver/>
                 <main className="wrapper-campaings">
-                      {campaings && campaings.post.map(campaing => (
-                        <div className="box-campanha" key={campaing.key}>
+                      {campaings && campaings.map(campaing => (
+                        <div className="box-campanha" key={campaing._id}>
                             <div className="placeholder-img">
+                                <img src={campaing.url} alt=""/>
                                 <div className="content">
-                                    <p>Lorem ipsum</p>
-                                    <span>Lorem ipsum dolor sit amet</span>
-                                    <a href="">DOAR</a> 
+                                    <p>{campaing.title}</p>
                                 </div>
                             </div>
                         </div>

@@ -97,6 +97,7 @@ footer{ background-color: #00d663; height: 80px; display: flex; justify-content:
 
 /*============================Login====================================*/
 main.login-block{ width: 100%; max-width: 1440px; padding: 80px  40px 0; margin: 0 auto; background: #4CAF50; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+	a{ color: #FFF; padding-top: 50px; margin: 0 auto; }
 	h1{ color: #FFF; max-width: 700px; text-align: left; margin: 0 auto; width: 100%; }
 	form{ display: flex; flex-direction: column; margin: 60px auto 0; max-width: 400px; width: 100%; 
 		div{ display: flex; flex-direction: column; position: relative; 
@@ -154,8 +155,9 @@ header.fix-lateral{ position: fixed; left: 0; top: 0; width: 20%; height: 100%; 
 }
 main.wrapper-campaings{ display: flex; flex-wrap: wrap;  margin: 50px 0 0 20%; width: 80%; min-height: 100vh; padding: 0 20px;
 	.box-campanha{ width: 100%; background: #FFF; box-shadow: 0 10px 25px rgba(0,0,0,.1); border-radius: 10px;  height: 100%; max-height: 200px; max-width: 270px; margin-right: 20px; transition: transform 0.2s ease-in; margin-bottom: 20px;
-		.placeholder-img{ position: relative; background-color: #00d663; border-radius: 10px; min-height: 200px; max-width: 270px; 
-			.content{ cursor: pointer; border-radius: 10px; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,.3); 
+		.placeholder-img{ position: relative; overflow: hidden; border-radius: 10px; min-height: 200px; max-width: 270px;
+			img{ width: 100%; height: 100%; } 
+			.content{ top:0; left: 0; cursor: pointer; border-radius: 10px; display: flex; flex-direction: column; justify-content: flex-end; padding: 15px; position: absolute; width: 100%; height: 100%; background-color: rgba(0,0,0,.3); 
 				p{ color: #FFF; font-size: 18px; font-weight: bold; }
 				span{ color:#FFF; }
 				a{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; border: 2px solid #FFF; padding: 0 18px; height: 35px; background: #FFF; color: #00d663; border-radius: 33px; width: 100px; transition: all 0.2s ease; }
@@ -193,7 +195,7 @@ main.donation{
 	}
 }
 footer.donation{
-	span{ display: block; margin: 0 auto; } 
+	span{ display: block; margin: 0 auto; font-family: Satisfy; color: #FFF; font-size: 22px; } 
 }
 
 /*======================Create-Donation==================*/

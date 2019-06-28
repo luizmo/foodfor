@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { MenuGiver } from '../components';
 import  api  from '../lib/api';
 
@@ -12,20 +13,18 @@ class Giver extends Component{
     }
 	render(){
         const { campaings } = this.state;
-        console.log(campaings)
 		return(
 			<Fragment>
  				<MenuGiver/>
 				<main className="wrapper-campaings">
 
                     {campaings && campaings.map(campaing => (
-                        <div className="box-campanha">
+                        <div className="box-campanha" key={campaing._id}>
                             <div className="placeholder-img">
                                 <img src={campaing.url} alt=""/>
                                 <div className="content">
-                                    <p>Lorem ipsum</p>
-                                    <span>Lorem ipsum dolor sit amet</span>
-                                    <a href="">DOAR</a> 
+                                    <p>{campaing.title}</p>
+                                    <Link to={`/donation/${campaing._id}`}>DOAR</Link> 
                                 </div>
                             </div>
                         </div>
