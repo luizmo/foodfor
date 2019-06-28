@@ -186,7 +186,9 @@ main.donation{
 			h1{ color: #FFF; }
 		}
 	}
-	div.content-donation{ padding: 50px 0; max-width: 1200px; width: 100%; margin: 0 auto; }
+	div.content-donation{ padding: 50px 0; max-width: 1200px; width: 100%; margin: 0 auto; 
+		a{ display: flex; align-items: center; justify-content: center; width: 200px; color: #FFF;  background-color: #00d663; font-size: 22px; padding: 0 20px; margin: 30px auto; height: 40px; border-radius: 33px;   }
+	}
 	div.slider{  max-width: 1200px; width: 100%; margin: 0 auto; }
 
 	@media screen and (max-width: 997px){
