@@ -30,8 +30,15 @@ class MenuReceiver extends Component{
 		const { isMenuOpen } = this.state;
 		return(
 			<header className="fix-lateral">
-	            <nav>
+				<button className="mobile" onClick={this.openMenu}>
+					<img src={ require('../img/menu.png') } alt=""/>
+				</button>
+				<img className="mobile" src={require('../img/logo.png')} alt=""/>
+	            <nav className={ isMenuOpen ? 'active' : undefined }>
 	                <ul>
+		                <button className="mobile" onClick={this.closeMenu}>
+							<img src={ require('../img/close.png') } alt=""/>
+						</button>
 	                    <li><NavLink to="/create-donation">Criar página Campanha</NavLink></li>
 	                    <li onClick={ (e) => this.logout(e) }> Sair</li>
 	                </ul>

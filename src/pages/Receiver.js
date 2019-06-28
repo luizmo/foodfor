@@ -7,16 +7,17 @@ class Receiver extends Component{
         this.state = { campaings: null }
     }
     componentWillMount(){
-        api.get('/post').then( res => this.setState({ campaings: res.data }))
+        api.get('/post/list').then( res => this.setState({ campaings: res.data }))
     }
     render(){
         const { campaings } = this.state;
+        console.log(campaings);
         return(
             <Fragment>
                 <MenuReceiver/>
                 <main className="wrapper-campaings">
-                      {campaings && campaings.map(campaing => (
-                        <div className="box-campanha">
+                      {campaings && campaings.post.map(campaing => (
+                        <div className="box-campanha" key={campaing.key}>
                             <div className="placeholder-img">
                                 <div className="content">
                                     <p>Lorem ipsum</p>

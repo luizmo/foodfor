@@ -17,10 +17,10 @@ class Login extends Component{
             const response = await api.post("/login", { email, password });
             login(response.data.token);
             if(response.data.type == 'doador'){
-                history.push("/receiver");
+                history.push("/giver");
             }
             else{
-                history.push("/giver");
+                history.push("/receiver");
             }
         }
         catch (err) {

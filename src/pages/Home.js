@@ -8,7 +8,10 @@ class Home extends Component{
                 <MenuHome/>
                 <main className="home">
                    <div className="brand-wrapper">
-                       <h1>foodfor</h1>
+                        <img src={ require('../img/donation.jpg') } alt=""/>
+                        <div>
+                            <h1>foodfor</h1>
+                        </div>    
                     </div>
                     <div className="content-wrapper">
 

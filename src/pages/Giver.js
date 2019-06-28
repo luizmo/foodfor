@@ -21,6 +21,7 @@ class Giver extends Component{
                     {campaings && campaings.map(campaing => (
                         <div className="box-campanha">
                             <div className="placeholder-img">
+                                <img src={campaing.url} alt=""/>
                                 <div className="content">
                                     <p>Lorem ipsum</p>
                                     <span>Lorem ipsum dolor sit amet</span>

@@ -51,9 +51,15 @@ class NewAccount extends Component{
                             <input type="text" placeholder="CPF ou CNPJ" onChange={e => this.setState({ cpf_cnpj: e.target.value })}/>
                             <label>CPF ou CNPJ</label>
                         </div>
-                        <div>
-                            <input type="text" placeholder="You typo doador /donatario" onChange={e => this.setState({ type: e.target.value })}/>
-                            <label>type</label>
+                        <div className="radios">
+                            <div>
+                                <input id="doador" type="radio" value="doador" onChange={e => this.setState({ type: e.target.value })}/>
+                                <label htmlFor="doador">Doador</label>
+                            </div>
+                            <div>    
+                                <input id="donatario" type="radio" value="donatario" onChange={ e => this.setState({ type: e.target.value}) }/>
+                                <label htmlFor="donatario">Donatário</label>
+                            </div>    
                         </div>
                         <button type="submit">Criar conta</button>
                     </form>

@@ -29,11 +29,16 @@ class MenuGiver extends Component{
 		const { isMenuOpen } = this.state;
 		return(
 			<header className="fix-lateral">
+				<button className="mobile" onClick={this.openMenu}>
+					<img src={ require('../img/menu.png') } alt=""/>
+				</button>
+				<img className="mobile" src={require('../img/logo.png')} alt=""/>
 	            <nav className={isMenuOpen ? 'active' : undefined }>
 	                <ul>
+	               		<button className="mobile" onClick={this.closeMenu}>
+							<img src={ require('../img/close.png') } alt=""/>
+						</button>
 	                    <li>Listar Campanhas</li>
-	                    <li>Novas doações</li>
-	                    <li>Acompanhar doações</li>
 	                    <li onClick={ this.logout }> Sair</li>
 	                </ul>
 	            </nav>

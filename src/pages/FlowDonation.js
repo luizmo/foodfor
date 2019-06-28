@@ -30,8 +30,8 @@ class FlowDonation extends Component{
 				</header>
 				<main className="create-donation">
 					<form onSubmit={this.handleSignIn}>
-					     <div>
-						    <label>IMAGEM</label> <br/>
+					     <div className="image">
+						    <label>Adicione uma imagem que represente sua campanha</label> <br/>
 							<input type="file" onChange={e =>this.setState({file: e.target.files[0]})}/>
 						</div>
 						<div>
